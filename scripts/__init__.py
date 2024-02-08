@@ -1,42 +1,68 @@
+import scores
+from grassAndMud import inTheGarden
+from tradePotatoForOrc import tradePotatoForOrc
 
-orcOver = '''  
-  Orcs finally find your potato farm. 
-  Alas, orcs are not so intersted in potatoes 
-  as they are in eating you, and you end up in a cookpot
-  
-  Game Over
-  '''
+def begining():
+    textReader('beginingText.txt')
 
-potatoeOver = '''  
-  You have enough potatoes that you can go underground 
-  and not return to the surface until the danger is past. 
-  You nestle down into your burrow and enjoy your 
-  well earned rest
-  
-  Game Over
-  '''
+def textReader(text):
+    f = open('./resources/'+text, 'r')
+    print(f.read())
+
+#finds out if the game is over
+def isGameOver():
+    if scores.orcs.score >= 10:
+        textReader('orcGameOverMessage.txt')
+        return True
+    if scores.potatoes.score >= 10:
+        textReader('potatoeGameOverMessage.txt')
+        return True
+    if scores.destiny.score >= 10:
+        textReader('destinyGameOverMessage.txt')
+        return True
+    if scores.gameTime.score >= 10:
+        return True
+    return False
+
+#prints out the score
+def printScore():
+    print(" ")
+    print("~*~SCORE~*~")
+    print("Orcs: "+str(scores.orcs.score))
+    print("Potatoes: "+str(scores.potatoes.score))
+    print("Destiny: "+str(scores.destiny.score))
+    print(" ")
+    print("--metadata--")
+    if int(scores.potatoForOrc.score) > 1:
+        print("Potatoes to Remove an Orc: "+str(scores.potatoForOrc.score))
+    else:
+        print("Potato to Remove an Orc: "+str(scores.potatoForOrc.score))
+    print("Game time: " + str(scores.gameTime.score))
+    print("~*~*~*~")
+    print(" ")
+    print(" ")
 
 def game():
-    destiny = 0
-    potatoes = 0
-    orcs = 0
     gameover = False
 
     while gameover == False:
-        print("enter a number!")
+        #sudo code to help test the game out will be removed in final game
+        print("hit enter to roll, '2' to trade potatos to get rid of orcs, or 3 to quit")
         x = input()
-        potatoes += 1
-        orcs += int(x)
-        print("Orcs: "+str(orcs))
-        print("Potatoes: "+str(potatoes))
-        if orcs >= 10:
-            gameover = True
-            print(orcOver)
-            return
-        if potatoes >= 5:
-            gameover = True
-            print(potatoeOver)
-            return
-        
 
+        if x == '':
+            inTheGarden()
+        if x == '2':
+            tradePotatoForOrc()
+        if x == '3':
+            gameover = True
+            return
+    
+        scores.gameTime.score += 1
+        printScore()
+        gameover = isGameOver()
+
+
+
+begining()
 game()

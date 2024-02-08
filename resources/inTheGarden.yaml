@@ -1,6 +1,6 @@
 1 : ["You happily root about all day in your garden", potato : 1]
 2 : ["You narrowly avoid a visitor by hiding in a potato sack", potato : 1, destiny : 1]
-3 : ["A hooded stanger ligers outside your farm.", destiny : 1, ork : 1]
+3 : ["A hooded stanger ligers outside your farm.", destiny : 1, orc : 1]
 4 : ["Your field is ravaged in the night by unseen enemies", orc : 1, potato : -1]
 5 : ["You trade potatoes for other delicious foodstuff", potato : -1]
 6 : ["You burrow into a bumper crop of potatoes. Do you cry with joy? Possibly.", potato : 2]
