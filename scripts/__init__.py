@@ -64,12 +64,12 @@ def game():
         if x == '':
             inTheGarden()
         if x == 'trade':
-        
+
             tradePotatoForOrc()
         if x == 'exit':
             gameover = True
             return
-    
+
         scores.gameTime.score += 1
         printScore("~*~SCORE~*~")
         gameover = isGameOver()

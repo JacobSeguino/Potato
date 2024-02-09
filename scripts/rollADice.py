@@ -12,7 +12,7 @@ def rollADice(yamlFile):
 def dictionaryParser(val,yamlList):
     for key in yamlList[val]:
         print(str(key) + " changes by "+str(yamlList[val][key]))
-        
+
 def potatoChecker(val):
     if val == -1 and not int(scores.potatoes.score) == 0:
         scores.potatoes.score = scores.potatoes.score - 1

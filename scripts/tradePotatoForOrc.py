@@ -10,4 +10,3 @@ def tradePotatoForOrc():
         return
     scores.orcs.score = scores.orcs.score - 1
     scores.potatoes.score = scores.potatoes.score - scores.potatoForOrc.score
-    
