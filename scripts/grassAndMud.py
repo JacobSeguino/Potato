@@ -18,7 +18,4 @@ def tableChoice(fate):
         rollADice("aKnockAtTheDoor.yaml")
     if fate == 6:
         scores.potatoForOrc.score += 1
-        print("It now takes "+str(scores.potatoForOrc.score)+ " to remove 1 Orc")
-
-
-# inTheGarden()
+        print("it now takes "+str(scores.potatoForOrc.score)+ " potatoes to remove 1 Orc")

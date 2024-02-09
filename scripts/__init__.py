@@ -1,4 +1,5 @@
 import scores
+import os
 from grassAndMud import inTheGarden
 from tradePotatoForOrc import tradePotatoForOrc
 
@@ -12,22 +13,26 @@ def textReader(text):
 #finds out if the game is over
 def isGameOver():
     if scores.orcs.score >= 10:
+        os.system('cls')
         textReader('orcGameOverMessage.txt')
+        finalScore()
         return True
     if scores.potatoes.score >= 10:
+        os.system('cls')
         textReader('potatoeGameOverMessage.txt')
+        finalScore()
         return True
     if scores.destiny.score >= 10:
+        os.system('cls')
         textReader('destinyGameOverMessage.txt')
-        return True
-    if scores.gameTime.score >= 10:
+        finalScore()
         return True
     return False
 
 #prints out the score
-def printScore():
+def printScore(tital):
     print(" ")
-    print("~*~SCORE~*~")
+    print(tital)
     print("Orcs: "+str(scores.orcs.score))
     print("Potatoes: "+str(scores.potatoes.score))
     print("Destiny: "+str(scores.destiny.score))
@@ -42,24 +47,31 @@ def printScore():
     print(" ")
     print(" ")
 
+def finalScore():
+    print(" ")
+    printScore("~*~ FINAL SCORE ~*~")
+
 def game():
     gameover = False
 
     while gameover == False:
         #sudo code to help test the game out will be removed in final game
-        print("hit enter to roll, '2' to trade potatos to get rid of orcs, or 3 to quit")
+        if not scores.gameTime.score == 0:
+            print("Hit 'enter' to roll, type 'trade' to trade "+ str(scores.potatoForOrc.score) +" potatos to get rid of orcs, or type 'exit' to quit")
         x = input()
+        os.system('cls')
 
         if x == '':
             inTheGarden()
-        if x == '2':
+        if x == 'trade':
+        
             tradePotatoForOrc()
-        if x == '3':
+        if x == 'exit':
             gameover = True
             return
     
         scores.gameTime.score += 1
-        printScore()
+        printScore("~*~SCORE~*~")
         gameover = isGameOver()
 
 
