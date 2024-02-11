@@ -3,12 +3,15 @@ import os
 from grassAndMud import inTheGarden
 from tradePotatoForOrc import tradePotatoForOrc
 
+
 def begining():
     textReader('beginingText.txt')
+
 
 def textReader(text):
     f = open('./resources/'+text, 'r')
     print(f.read())
+
 
 #finds out if the game is over
 def isGameOver():
@@ -29,6 +32,7 @@ def isGameOver():
         return True
     return False
 
+
 #prints out the score
 def printScore(tital):
     print(" ")
@@ -47,9 +51,11 @@ def printScore(tital):
     print(" ")
     print(" ")
 
+
 def finalScore():
     print(" ")
     printScore("~*~ FINAL SCORE ~*~")
+
 
 def game():
     gameover = False
@@ -72,7 +78,6 @@ def game():
         scores.gameTime.score += 1
         printScore("~*~SCORE~*~")
         gameover = isGameOver()
-
 
 
 begining()

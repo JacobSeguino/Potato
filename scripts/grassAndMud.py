@@ -5,11 +5,13 @@ from rollADice import rollADice
 
 yamlFile = "grassAndMud.yaml"
 
+
 def inTheGarden():
     fate = random.randrange(2,7,2)
     # print(fate)
     print(yamlReader(yamlFile, fate))
     tableChoice(fate)
+
 
 def tableChoice(fate):
     if fate == 2:
