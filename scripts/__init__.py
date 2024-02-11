@@ -55,9 +55,8 @@ def game():
     gameover = False
 
     while gameover == False:
-        #sudo code to help test the game out will be removed in final game
         if not scores.gameTime.score == 0:
-            print("Hit 'enter' to roll, type 'trade' to trade "+ str(scores.potatoForOrc.score) +" potatos to get rid of orcs, or type 'exit' to quit")
+            print("Hit 'enter' to continue, type 'trade' to trade "+ str(scores.potatoForOrc.score) +" potato(es) to get rid of 1 orc, or type 'exit' to quit")
         x = input()
         os.system('cls')
 

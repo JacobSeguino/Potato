@@ -25,13 +25,10 @@ def changeScore(val,yamlList):
     for key in yamlList[val]:
         if str(key) == "potato":
             potatoChecker(yamlList[val][key])
-            # print(str(key) + " current value is: " + str(scores.potatoes.score))
         if str(key) == "orc":
             scores.orcs.score = scores.orcs.score + yamlList[val][key]
-            # print(str(key) + " current value is: " + str(scores.orcs.score))
         if str(key) == "destiny":
             scores.destiny.score = scores.destiny.score+ yamlList[val][key]
-            # print(str(key) + " current value is: " + str(scores.destiny.score))
 
 def listParser(yamlList):
     for i in range(len(yamlList)):

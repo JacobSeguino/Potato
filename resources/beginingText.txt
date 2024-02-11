@@ -7,4 +7,4 @@
 
 The Goal of this game is to get 10 Potatoes before you get 10 Destiny, or 10 Orcs
 
-Hit enter to roll, or type 'exit' to quit
+Hit enter to begin, or type 'exit' to quit
