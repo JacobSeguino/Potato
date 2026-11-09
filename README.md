@@ -9,3 +9,27 @@ This project created based off the
 he made of it.
 
 <img src="./resources/original_post.png" width="50%" hight="50%">
+
+# Running app
+
+## On PC
+### start up python venv
+
+`python =m venv venv`
+
+`./venv/Script/activate`
+
+### start the game
+
+`python scripts/__init__.py`
+
+## On Mac/Linux
+### start up python venv
+
+`python =m venv venv`
+
+`source venv/bin/activate`
+
+### start the game
+
+`python scripts/__init__.py`
