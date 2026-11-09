@@ -7,7 +7,7 @@ yamlFile = "grassAndMud.yaml"
 
 
 def inTheGarden():
-    fate = random.randrange(2,7,2)
+    fate = random.randrange(2, 7, 2)
     # print(fate)
     print(yamlReader(yamlFile, fate))
     tableChoice(fate)
@@ -20,4 +20,5 @@ def tableChoice(fate):
         rollADice("aKnockAtTheDoor.yaml")
     if fate == 6:
         scores.potatoForOrc.score += 1
-        print("it now takes "+str(scores.potatoForOrc.score)+ " potatoes to remove 1 Orc")
+        print("it now takes "+str(scores.potatoForOrc.score)
+              + " potatoes to remove 1 Orc")

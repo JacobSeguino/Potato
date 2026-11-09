@@ -13,27 +13,25 @@ def textReader(text):
     print(f.read())
 
 
-#finds out if the game is over
+# finds out if the game is over
 def isGameOver():
     if scores.orcs.score >= 10:
-        os.system('cls')
-        textReader('orcGameOverMessage.txt')
-        finalScore()
-        return True
+        return gameOverReadOut('orcGameOverMessage.txt')
     if scores.potatoes.score >= 10:
-        os.system('cls')
-        textReader('potatoeGameOverMessage.txt')
-        finalScore()
-        return True
+        return gameOverReadOut('potatoeGameOverMessage.txt')
     if scores.destiny.score >= 10:
-        os.system('cls')
-        textReader('destinyGameOverMessage.txt')
-        finalScore()
-        return True
+        return gameOverReadOut('destinyGameOverMessage.txt')
     return False
 
 
-#prints out the score
+def gameOverReadOut(endGameYamlName):
+    os.system('cls')
+    textReader(endGameYamlName)
+    printScore("~*~ FINAL SCORE ~*~")
+    return True
+
+
+# Prints out the score
 def printScore(tital):
     print(" ")
     print(tital)
@@ -43,26 +41,25 @@ def printScore(tital):
     print(" ")
     print("--metadata--")
     if int(scores.potatoForOrc.score) > 1:
-        print("Potatoes to Remove an Orc: "+str(scores.potatoForOrc.score))
+        print("It cost " + str(scores.potatoForOrc.score) +
+              " Potatoes to Remove 1 Orc")
     else:
-        print("Potato to Remove an Orc: "+str(scores.potatoForOrc.score))
+        print("It cost " + str(scores.potatoForOrc.score) +
+              " Potato to Remove 1 Orc")
     print("Game time: " + str(scores.gameTime.score))
     print("~*~*~*~")
     print(" ")
     print(" ")
 
 
-def finalScore():
-    print(" ")
-    printScore("~*~ FINAL SCORE ~*~")
-
-
 def game():
     gameover = False
 
-    while gameover == False:
+    while not gameover:
         if not scores.gameTime.score == 0:
-            print("Hit 'enter' to continue, type 'trade' to trade "+ str(scores.potatoForOrc.score) +" potato(es) to get rid of 1 orc, or type 'exit' to quit")
+            print("Hit 'enter' to continue, type 'trade' to trade "
+                  + str(scores.potatoForOrc.score) +
+                  " potato(es) to get rid of 1 orc, or type 'exit' to quit")
         x = input()
         os.system('cls')
 
@@ -76,8 +73,9 @@ def game():
             return
 
         scores.gameTime.score += 1
-        printScore("~*~SCORE~*~")
         gameover = isGameOver()
+        if not gameover:
+            printScore("~*~SCORE~*~")
 
 
 begining()
